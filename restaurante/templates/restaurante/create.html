@@ -1,0 +1,19 @@
+{% extends 'restaurante/base.html' %}
+<html>
+    <head>
+     {% block title %}
+        Creacion de restaurante  
+        {% endblock  %}}
+    </head>
+    <body>
+        {% block main %}
+        <form method="POST">
+            {% csrf_token %}
+            {{request.method}}
+            {{form.as_p}} 
+            <input type="submit" value ="agregar restaurante">
+        </form>
+
+        {% endblock %}
+    </body>
+</html>

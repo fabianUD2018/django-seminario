@@ -1,0 +1,28 @@
+{% extends 'restaurante/base.html' %}
+<html>
+    <body>
+        {% block main %}
+        <table>
+        <thead>
+            <th>nombre</th>
+            <th>dueño</th>
+            <th>acciones</th>
+        </thead>
+        <tbody>
+            {% for r in rest %}
+            <tr>
+                <td>{{r.name}}</td>
+               <td>
+                  {{r.owner}}
+            </td> 
+            <td>
+                <a href ="{% url 'restaurant:edit' r.id %}">Editar</a>
+                <a href ="{% url 'restaurant:delete' r.id%}"> Eliminar</a>
+            </td>
+            </tr>
+             {% endfor %}
+        </tbody>
+        </table>
+        {% endblock %}
+    </body>
+</html>
